@@ -1,11 +1,15 @@
 # generate_dataset.py
 # Install dependencies: pip install faker pandas numpy
 
+import os
 import pandas as pd
 import numpy as np
 import random
 from faker import Faker
 from datetime import datetime, timedelta
+
+OUTPUT_DIR = os.path.join("data", "raw")
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 fake = Faker()
 np.random.seed(42)
@@ -27,7 +31,7 @@ customers = pd.DataFrame({
     'age': [random.randint(18, 70) for _ in range(N_CUSTOMERS)],
     'tier': [random.choice(['bronze', 'silver', 'gold', 'platinum']) for _ in range(N_CUSTOMERS)],
 })
-customers.to_csv('customers.csv', index=False)
+customers.to_csv(os.path.join(OUTPUT_DIR, 'customers.csv'), index=False)
 
 # --- Products ---
 categories = ['Electronics', 'Clothing', 'Home & Kitchen', 'Books', 'Sports', 'Beauty', 'Toys']
@@ -41,7 +45,7 @@ products = pd.DataFrame({
     'stock_qty': [random.randint(10, 1000) for _ in range(N_PRODUCTS)],
     'is_active': [random.choice([True, False]) for _ in range(N_PRODUCTS)],
 })
-products.to_csv('products.csv', index=False)
+products.to_csv(os.path.join(OUTPUT_DIR, 'products.csv'), index=False)
 
 # --- Orders ---
 customer_ids = customers['customer_id'].tolist()
@@ -56,7 +60,7 @@ orders = pd.DataFrame({
     'discount_pct': [round(random.uniform(0, 0.4), 2) for _ in range(N_ORDERS)],
     'shipping_country': [random.choice(['US', 'CA', 'GB', 'AU', 'IN', 'DE']) for _ in range(N_ORDERS)],
 })
-orders.to_csv('orders.csv', index=False)
+orders.to_csv(os.path.join(OUTPUT_DIR, 'orders.csv'), index=False)
 
 # --- Order Items ---
 product_ids = products['product_id'].tolist()
@@ -76,7 +80,7 @@ for oid in order_ids:
             'unit_price': price,
             'returned': random.choice([True, False]),
         })
-pd.DataFrame(items).to_csv('order_items.csv', index=False)
+pd.DataFrame(items).to_csv(os.path.join(OUTPUT_DIR, 'order_items.csv'), index=False)
 
 # --- Events ---
 event_types = ['page_view', 'add_to_cart', 'checkout_start', 'purchase', 'search', 'product_view']
@@ -89,6 +93,6 @@ events = pd.DataFrame({
     'timestamp': [start_date + timedelta(seconds=random.randint(0, 94608000)) for _ in range(50000)],
     'device': [random.choice(['desktop', 'mobile', 'tablet']) for _ in range(50000)],
 })
-events.to_csv('events.csv', index=False)
+events.to_csv(os.path.join(OUTPUT_DIR, 'events.csv'), index=False)
 
 print("✅ Dataset generated. 5 CSV files ready.")

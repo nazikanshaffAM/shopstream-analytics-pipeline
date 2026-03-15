@@ -1,0 +1,301 @@
+product_id,name,category,sub_category,price,cost,stock_qty,is_active
+P0000,Multi-layered 6thgeneration analyzer,Beauty,Group,171.98,146.15,89,False
+P0001,Reduced full-range customer loyalty,Clothing,Around,391.79,10.09,86,False
+P0002,Enterprise-wide didactic Graphic Interface,Beauty,Participant,349.15,73.9,516,False
+P0003,Advanced bifurcated support,Home & Kitchen,May,146.95,106.32,71,False
+P0004,Upgradable clear-thinking capability,Electronics,Trade,82.16,57.27,227,False
+P0005,User-friendly asynchronous task-force,Home & Kitchen,Everybody,441.17,114.75,23,False
+P0006,Reactive solution-oriented adapter,Clothing,Nothing,20.9,96.51,696,False
+P0007,Programmable optimizing collaboration,Clothing,Wish,376.81,50.5,231,True
+P0008,Business-focused intangible attitude,Toys,Simply,254.13,118.45,489,True
+P0009,Operative heuristic benchmark,Books,Low,10.38,32.86,848,False
+P0010,Proactive stable capacity,Beauty,Attack,417.18,241.97,404,True
+P0011,Networked analyzing implementation,Sports,Reason,341.55,228.68,202,False
+P0012,Decentralized discrete open architecture,Clothing,Notice,438.61,104.41,509,False
+P0013,Enterprise-wide tangible product,Electronics,Go,279.31,205.46,117,False
+P0014,Triple-buffered disintermediate budgetary management,Clothing,Movie,415.61,176.55,358,False
+P0015,Organic radical concept,Electronics,Challenge,459.98,185.81,223,True
+P0016,Switchable actuating open architecture,Books,Bring,253.43,3.89,843,True
+P0017,Configurable 4thgeneration data-warehouse,Clothing,Player,356.13,94.91,614,False
+P0018,Vision-oriented systematic product,Books,Conference,214.72,57.54,789,True
+P0019,Extended national emulation,Beauty,Any,82.62,72.33,550,False
+P0020,Profound maximized methodology,Books,International,486.7,220.14,536,True
+P0021,Streamlined didactic alliance,Electronics,Individual,263.14,67.6,889,False
+P0022,Devolved impactful adapter,Beauty,Idea,489.07,209.94,330,True
+P0023,Devolved tangible collaboration,Sports,Fact,66.94,199.19,788,False
+P0024,Optional multi-state Graphic Interface,Clothing,Protect,109.87,104.85,977,False
+P0025,Fully-configurable cohesive hardware,Beauty,Move,311.43,61.91,329,False
+P0026,Persistent user-facing capability,Toys,Full,113.36,225.25,735,True
+P0027,Virtual dedicated software,Toys,Term,95.93,104.81,474,False
+P0028,Automated leadingedge moderator,Electronics,Visit,374.27,5.85,681,True
+P0029,Reactive next generation help-desk,Sports,Nor,281.85,40.04,167,False
+P0030,Networked mobile complexity,Electronics,Change,421.65,94.85,878,True
+P0031,Inverse optimizing matrix,Books,Drop,409.2,204.54,526,True
+P0032,Organic scalable protocol,Books,Significant,236.88,205.37,118,False
+P0033,Fundamental foreground middleware,Electronics,Hit,160.03,150.79,946,True
+P0034,Ameliorated high-level database,Electronics,Place,322.74,85.1,143,True
+P0035,Programmable non-volatile Graphic Interface,Toys,Must,414.49,239.87,234,False
+P0036,Multi-layered tertiary framework,Electronics,Well,86.59,248.22,948,False
+P0037,Up-sized directional methodology,Toys,Successful,402.65,61.97,382,True
+P0038,Triple-buffered mobile approach,Toys,Draw,325.09,243.43,404,False
+P0039,Fully-configurable zero tolerance Graphical User Interface,Beauty,Husband,101.39,49.78,473,False
+P0040,Realigned logistical monitoring,Electronics,Difference,58.66,161.82,898,True
+P0041,Synergized 24hour moderator,Clothing,Bed,43.52,207.48,645,True
+P0042,Vision-oriented uniform matrix,Clothing,Note,303.58,200.73,535,False
+P0043,Enhanced mobile function,Toys,Or,424.07,145.31,217,True
+P0044,Proactive disintermediate function,Electronics,Likely,18.88,33.96,808,False
+P0045,Customizable mobile concept,Home & Kitchen,Important,144.69,159.8,419,False
+P0046,Ergonomic well-modulated task-force,Clothing,Recognize,273.08,244.38,202,True
+P0047,Front-line real-time matrices,Beauty,Because,37.33,45.08,80,True
+P0048,Exclusive needs-based focus group,Sports,Like,300.57,226.23,294,False
+P0049,Balanced eco-centric Graphic Interface,Electronics,Outside,379.48,130.28,443,True
+P0050,Robust attitude-oriented approach,Toys,None,158.01,110.48,178,True
+P0051,Synchronized hybrid flexibility,Electronics,Provide,278.09,26.7,712,False
+P0052,User-friendly optimal complexity,Toys,Congress,321.0,200.69,324,True
+P0053,Devolved fault-tolerant circuit,Electronics,Measure,21.02,127.06,984,False
+P0054,Streamlined static matrices,Sports,Home,138.24,158.6,900,True
+P0055,Digitized executive challenge,Beauty,Sport,488.45,196.5,601,True
+P0056,Profit-focused next generation concept,Toys,People,284.57,211.07,673,False
+P0057,Business-focused heuristic hub,Home & Kitchen,Me,284.05,157.57,114,False
+P0058,Progressive content-based neural-net,Toys,Say,396.16,66.54,160,True
+P0059,Exclusive 3rdgeneration contingency,Beauty,Sport,27.61,139.12,482,False
+P0060,Cross-platform scalable product,Electronics,Thing,160.72,237.28,907,False
+P0061,Streamlined logistical support,Clothing,By,472.04,52.53,119,False
+P0062,Upgradable local structure,Clothing,Recent,9.2,25.13,772,True
+P0063,Reactive tangible Internet solution,Books,High,181.54,110.48,122,False
+P0064,Enterprise-wide fault-tolerant knowledgebase,Toys,Accept,144.79,157.97,256,False
+P0065,Robust high-level protocol,Sports,Drop,202.08,149.14,26,False
+P0066,Diverse transitional approach,Books,Very,101.47,8.9,925,True
+P0067,Robust client-server parallelism,Toys,Too,377.16,177.48,481,False
+P0068,Open-source interactive emulation,Clothing,Third,364.22,230.31,201,False
+P0069,Extended asynchronous service-desk,Home & Kitchen,Floor,487.06,21.54,283,True
+P0070,Fundamental solution-oriented help-desk,Home & Kitchen,Wall,352.82,96.84,39,True
+P0071,Digitized impactful ability,Books,Might,53.2,186.1,497,False
+P0072,Persistent responsive workforce,Clothing,Risk,206.61,34.38,687,True
+P0073,Customizable full-range database,Clothing,Parent,372.02,114.52,553,False
+P0074,Synergized analyzing pricing structure,Electronics,Compare,55.0,158.61,473,True
+P0075,Robust 6thgeneration open system,Sports,Tell,404.71,90.81,370,False
+P0076,Reverse-engineered systemic info-mediaries,Beauty,Down,79.34,61.45,281,False
+P0077,Organized demand-driven definition,Home & Kitchen,Foreign,295.65,224.68,131,True
+P0078,Profit-focused neutral open architecture,Beauty,Go,194.15,75.64,959,False
+P0079,Function-based intermediate artificial intelligence,Sports,Tough,295.25,134.78,573,False
+P0080,Up-sized asymmetric framework,Electronics,Design,426.75,62.82,96,True
+P0081,Proactive hybrid solution,Electronics,Scientist,148.61,195.45,372,False
+P0082,Team-oriented dynamic protocol,Toys,Respond,80.01,196.94,451,False
+P0083,Triple-buffered client-server info-mediaries,Electronics,Small,234.24,193.06,227,True
+P0084,Balanced multi-tasking policy,Electronics,Against,443.18,165.5,164,True
+P0085,Distributed explicit hierarchy,Sports,Good,51.18,70.19,416,False
+P0086,Horizontal didactic knowledgebase,Home & Kitchen,Authority,360.64,233.87,524,False
+P0087,Future-proofed directional implementation,Electronics,Fine,442.78,157.6,451,False
+P0088,Decentralized asynchronous access,Sports,Determine,404.7,160.32,530,False
+P0089,Innovative asymmetric strategy,Toys,Push,328.84,145.68,351,False
+P0090,Re-contextualized eco-centric access,Books,Their,385.57,27.65,64,False
+P0091,Right-sized impactful info-mediaries,Clothing,Choose,84.72,115.86,461,False
+P0092,Networked attitude-oriented algorithm,Electronics,That,482.02,149.78,289,False
+P0093,Organized radical archive,Clothing,Network,260.57,28.56,388,False
+P0094,Synchronized modular secured line,Electronics,Specific,365.72,72.05,110,False
+P0095,Decentralized value-added concept,Clothing,Single,327.44,223.86,60,True
+P0096,Ameliorated clear-thinking migration,Books,Bank,465.46,25.01,674,True
+P0097,Secured interactive ability,Books,New,174.0,124.57,401,False
+P0098,Synchronized static product,Clothing,Pattern,393.75,91.63,759,True
+P0099,Reduced asynchronous application,Home & Kitchen,Home,172.82,209.9,960,True
+P0100,Enhanced coherent leverage,Beauty,Coach,183.36,98.92,442,False
+P0101,Re-contextualized stable synergy,Home & Kitchen,Very,428.7,123.78,208,True
+P0102,Persevering full-range knowledge user,Clothing,Under,218.3,7.45,311,False
+P0103,Synchronized reciprocal secured line,Beauty,Professional,445.89,20.25,203,True
+P0104,Realigned dynamic monitoring,Books,Significant,388.22,239.89,422,False
+P0105,Phased executive productivity,Beauty,Just,196.88,20.93,190,True
+P0106,Business-focused mission-critical projection,Beauty,Us,108.37,172.46,618,False
+P0107,Profound systemic hub,Toys,Also,307.14,95.06,292,True
+P0108,Down-sized system-worthy database,Electronics,West,42.12,79.77,552,False
+P0109,Monitored background interface,Books,Manage,80.44,227.26,632,True
+P0110,Innovative regional product,Clothing,Kind,315.76,202.52,515,False
+P0111,Organized 24hour system engine,Electronics,Save,251.27,46.59,541,False
+P0112,Multi-tiered 6thgeneration framework,Clothing,Seven,403.34,4.51,453,True
+P0113,Exclusive clear-thinking interface,Electronics,Huge,75.6,46.31,121,True
+P0114,Cross-group global pricing structure,Home & Kitchen,Few,435.88,142.69,707,True
+P0115,Multi-lateral bandwidth-monitored alliance,Home & Kitchen,Science,275.83,152.45,61,False
+P0116,Down-sized disintermediate Local Area Network,Electronics,Tree,484.63,9.8,671,True
+P0117,Devolved bi-directional knowledge user,Sports,Miss,391.82,244.03,264,False
+P0118,Persevering 24/7 model,Home & Kitchen,Keep,48.15,248.45,991,True
+P0119,Versatile eco-centric adapter,Electronics,Cell,51.59,122.01,123,False
+P0120,Diverse tertiary policy,Home & Kitchen,Century,160.29,154.27,234,False
+P0121,Triple-buffered 24/7 alliance,Electronics,Ground,467.36,137.53,127,False
+P0122,Innovative dynamic initiative,Electronics,He,84.93,41.28,64,True
+P0123,Down-sized logistical analyzer,Sports,Audience,143.66,185.94,926,True
+P0124,User-centric encompassing workforce,Clothing,His,184.85,231.79,46,True
+P0125,Digitized high-level moratorium,Clothing,Gun,49.17,49.83,599,True
+P0126,Optional 6thgeneration neural-net,Books,Just,93.7,9.33,282,True
+P0127,Grass-roots impactful throughput,Sports,Measure,387.11,7.71,254,False
+P0128,Robust executive circuit,Home & Kitchen,Thought,132.68,128.91,77,True
+P0129,Reduced composite data-warehouse,Sports,Analysis,239.26,39.78,554,True
+P0130,Customizable contextually-based challenge,Clothing,Manage,131.73,216.98,113,True
+P0131,Innovative needs-based application,Beauty,Myself,438.95,30.47,292,False
+P0132,Centralized optimal pricing structure,Books,Something,326.89,55.81,241,False
+P0133,Multi-channeled hybrid installation,Clothing,Difference,74.52,83.23,913,True
+P0134,Ameliorated 24hour instruction set,Beauty,Institution,66.36,56.5,645,False
+P0135,Quality-focused holistic synergy,Beauty,Dinner,286.52,182.48,726,True
+P0136,Persistent asymmetric structure,Home & Kitchen,Lose,24.6,235.08,743,True
+P0137,Extended attitude-oriented secured line,Sports,Everybody,430.21,68.36,424,True
+P0138,Total asynchronous Graphic Interface,Toys,Become,203.46,121.43,411,True
+P0139,Centralized background flexibility,Home & Kitchen,Arrive,429.22,238.4,412,True
+P0140,Extended non-volatile firmware,Home & Kitchen,People,458.98,88.44,113,True
+P0141,Inverse responsive policy,Electronics,Level,68.85,138.77,235,True
+P0142,Implemented composite paradigm,Home & Kitchen,Lot,186.53,74.99,761,True
+P0143,Vision-oriented encompassing workforce,Books,Want,423.19,186.81,853,True
+P0144,Compatible bottom-line productivity,Beauty,Rise,476.26,124.96,910,True
+P0145,Proactive dynamic alliance,Home & Kitchen,Same,189.97,129.14,718,False
+P0146,Assimilated dynamic instruction set,Home & Kitchen,And,342.69,101.19,284,True
+P0147,Mandatory intermediate support,Toys,Voice,255.44,49.88,517,False
+P0148,Programmable context-sensitive software,Beauty,Level,135.1,44.89,220,False
+P0149,Optional uniform leverage,Toys,System,438.39,172.39,185,True
+P0150,Switchable 24hour workforce,Electronics,Attorney,342.87,222.05,814,True
+P0151,Networked next generation encoding,Toys,Over,312.2,71.71,218,False
+P0152,Integrated neutral frame,Electronics,Statement,323.71,99.42,365,False
+P0153,Mandatory even-keeled monitoring,Toys,More,371.82,146.74,662,False
+P0154,Multi-layered contextually-based strategy,Clothing,To,126.18,192.08,304,True
+P0155,Synergistic optimal customer loyalty,Toys,Customer,411.51,79.27,732,True
+P0156,Down-sized asynchronous budgetary management,Beauty,Current,8.93,198.94,620,False
+P0157,Progressive user-facing moratorium,Clothing,Source,427.26,238.53,304,False
+P0158,Organic bi-directional support,Home & Kitchen,Way,148.88,122.98,761,True
+P0159,Integrated stable model,Clothing,Most,83.31,220.95,13,False
+P0160,Organized multimedia customer loyalty,Books,Case,202.64,107.09,106,True
+P0161,Open-architected systematic standardization,Books,Actually,41.12,187.28,199,True
+P0162,Total methodical algorithm,Beauty,Series,197.17,204.34,525,True
+P0163,Synchronized intangible data-warehouse,Toys,Hundred,233.83,156.48,939,True
+P0164,Switchable logistical intranet,Toys,Father,51.28,152.61,727,True
+P0165,Implemented high-level algorithm,Books,Visit,235.61,108.47,647,True
+P0166,Progressive zero administration moderator,Toys,Though,323.03,142.65,498,True
+P0167,Triple-buffered zero administration firmware,Electronics,Speak,450.56,94.74,766,False
+P0168,Customer-focused object-oriented paradigm,Electronics,Than,235.1,158.91,322,False
+P0169,Switchable content-based core,Sports,Including,47.48,17.94,883,False
+P0170,Up-sized bi-directional implementation,Books,Return,367.23,43.48,938,False
+P0171,Future-proofed explicit Graphic Interface,Beauty,Industry,459.14,10.37,714,True
+P0172,Balanced eco-centric approach,Home & Kitchen,Production,461.63,128.82,254,False
+P0173,Profit-focused zero administration attitude,Clothing,Involve,385.27,147.54,184,False
+P0174,Distributed leadingedge toolset,Electronics,Simply,103.74,74.78,332,False
+P0175,Fundamental 3rdgeneration application,Home & Kitchen,Let,167.72,207.02,707,False
+P0176,Networked analyzing middleware,Clothing,Each,162.06,161.98,81,False
+P0177,Self-enabling real-time strategy,Clothing,Media,498.24,241.36,180,True
+P0178,Seamless contextually-based service-desk,Toys,Animal,245.72,89.36,201,False
+P0179,Public-key 3rdgeneration portal,Books,Continue,352.63,9.43,350,False
+P0180,Phased homogeneous matrix,Home & Kitchen,Occur,240.73,46.62,931,False
+P0181,Ameliorated global emulation,Home & Kitchen,Employee,142.8,82.02,476,True
+P0182,Exclusive eco-centric moderator,Books,No,23.95,198.14,155,True
+P0183,Compatible transitional open system,Books,Matter,82.09,90.72,995,False
+P0184,Operative executive neural-net,Books,Same,237.63,20.01,23,False
+P0185,Distributed bifurcated approach,Beauty,Play,321.91,164.92,692,True
+P0186,Object-based 3rdgeneration interface,Books,Heavy,163.49,94.25,495,False
+P0187,Multi-layered composite model,Sports,Seven,20.51,195.32,448,True
+P0188,Universal motivating array,Toys,Executive,302.53,32.33,352,False
+P0189,Stand-alone client-driven productivity,Beauty,Former,193.24,81.01,31,True
+P0190,Fundamental reciprocal functionalities,Home & Kitchen,Note,468.55,4.7,191,False
+P0191,Reduced clear-thinking hierarchy,Clothing,Democrat,183.94,83.56,280,True
+P0192,Open-source scalable superstructure,Toys,Effect,217.9,117.41,912,False
+P0193,Horizontal interactive hub,Beauty,Little,239.34,199.22,88,True
+P0194,Customer-focused asymmetric policy,Clothing,Face,31.77,224.89,184,False
+P0195,Universal static complexity,Books,Because,434.67,141.29,705,False
+P0196,Future-proofed maximized functionalities,Books,Effort,476.56,97.63,788,False
+P0197,Fundamental asynchronous parallelism,Sports,Pass,343.42,151.25,883,True
+P0198,Synergistic tertiary forecast,Books,Require,138.57,132.76,19,True
+P0199,Exclusive needs-based productivity,Sports,Activity,319.67,27.52,618,False
+P0200,Multi-tiered solution-oriented website,Sports,White,46.38,70.96,370,True
+P0201,Persistent clear-thinking productivity,Books,Necessary,39.28,152.76,495,False
+P0202,Re-contextualized clear-thinking firmware,Sports,Where,205.51,221.07,607,False
+P0203,Intuitive bi-directional workforce,Sports,Everyone,152.68,215.26,11,True
+P0204,Automated maximized project,Toys,Room,357.54,20.56,510,True
+P0205,Vision-oriented discrete Local Area Network,Clothing,Wall,436.29,223.38,904,True
+P0206,Exclusive needs-based matrices,Books,Example,264.77,106.59,263,False
+P0207,Organic holistic circuit,Electronics,He,336.47,189.54,493,False
+P0208,Innovative asynchronous interface,Sports,Participant,133.43,80.81,122,False
+P0209,Customizable regional website,Beauty,Mention,416.12,81.39,56,True
+P0210,User-centric fresh-thinking Graphic Interface,Books,Cultural,50.76,50.89,848,False
+P0211,Reverse-engineered national knowledge user,Sports,Final,451.31,201.08,27,False
+P0212,Switchable object-oriented infrastructure,Sports,Dinner,174.3,125.67,590,False
+P0213,Implemented foreground secured line,Toys,Affect,377.82,247.58,706,True
+P0214,Fundamental neutral budgetary management,Beauty,Guy,86.44,106.47,307,False
+P0215,Visionary user-facing algorithm,Toys,Security,177.89,32.77,865,False
+P0216,Secured disintermediate moderator,Beauty,What,212.46,44.44,243,False
+P0217,Extended dynamic system engine,Clothing,Gas,240.37,83.06,547,True
+P0218,Integrated bottom-line info-mediaries,Beauty,Real,345.97,96.95,525,False
+P0219,Progressive client-driven definition,Electronics,Citizen,84.54,144.95,181,True
+P0220,Open-architected mobile encoding,Clothing,Professional,349.86,72.69,783,False
+P0221,Adaptive 4thgeneration projection,Home & Kitchen,Film,180.57,161.63,160,False
+P0222,Adaptive modular middleware,Electronics,Act,347.99,214.31,803,False
+P0223,Cross-platform value-added flexibility,Clothing,West,197.62,247.01,106,True
+P0224,Extended 4thgeneration frame,Toys,Information,9.92,228.09,112,True
+P0225,Pre-emptive dedicated attitude,Electronics,Truth,392.62,72.52,321,True
+P0226,Progressive modular firmware,Home & Kitchen,Line,300.58,210.73,833,True
+P0227,Open-source 4thgeneration utilization,Sports,Thank,43.52,101.9,763,True
+P0228,Public-key foreground success,Books,Purpose,335.64,224.17,353,True
+P0229,Secured impactful strategy,Clothing,Couple,310.17,229.67,473,True
+P0230,Virtual clear-thinking migration,Electronics,Still,165.25,11.7,512,False
+P0231,Face-to-face exuding array,Electronics,Education,493.25,161.9,762,False
+P0232,Grass-roots value-added methodology,Home & Kitchen,Worker,469.79,19.22,369,False
+P0233,Expanded foreground initiative,Home & Kitchen,Already,372.7,25.59,568,True
+P0234,Balanced mission-critical flexibility,Toys,Himself,369.68,201.02,273,True
+P0235,Profit-focused empowering array,Toys,Though,161.68,181.37,689,True
+P0236,Multi-layered heuristic help-desk,Toys,Break,79.5,70.12,508,True
+P0237,Quality-focused 24hour hardware,Toys,Owner,232.04,188.92,269,False
+P0238,Innovative 6thgeneration hardware,Toys,Bad,78.01,101.29,383,False
+P0239,Programmable leadingedge leverage,Clothing,Gas,432.83,140.0,479,True
+P0240,Total eco-centric paradigm,Home & Kitchen,Focus,61.24,79.67,23,True
+P0241,Open-architected zero-defect extranet,Books,Address,485.14,153.86,857,False
+P0242,Quality-focused maximized function,Clothing,Oil,206.16,99.55,371,True
+P0243,Object-based value-added standardization,Toys,Song,262.74,174.72,318,True
+P0244,Cross-platform multimedia Internet solution,Toys,Democratic,6.82,114.74,737,True
+P0245,Quality-focused encompassing open architecture,Sports,Involve,228.03,212.47,351,False
+P0246,Universal reciprocal flexibility,Books,Stage,417.09,241.85,922,False
+P0247,Optimized holistic focus group,Clothing,Increase,67.23,32.11,540,True
+P0248,Ergonomic reciprocal moderator,Clothing,Artist,227.42,94.73,803,True
+P0249,Triple-buffered responsive emulation,Toys,Recognize,484.88,155.26,689,False
+P0250,Profound methodical challenge,Clothing,Through,53.24,9.26,887,True
+P0251,Implemented regional array,Electronics,Available,113.22,13.86,895,False
+P0252,Compatible cohesive alliance,Beauty,Wall,489.62,4.58,933,False
+P0253,Vision-oriented systemic toolset,Clothing,Argue,212.99,28.07,873,True
+P0254,Grass-roots system-worthy protocol,Electronics,Feel,275.31,82.07,620,True
+P0255,Multi-channeled 24hour encoding,Beauty,Look,87.22,172.52,505,True
+P0256,Proactive dynamic concept,Beauty,Off,191.89,110.05,125,False
+P0257,Expanded 6thgeneration process improvement,Clothing,Threat,177.3,44.21,286,False
+P0258,Programmable fault-tolerant project,Books,Let,476.43,49.41,712,False
+P0259,User-centric foreground archive,Beauty,Image,486.01,225.76,541,False
+P0260,Multi-tiered static neural-net,Electronics,Poor,290.53,93.48,755,True
+P0261,Pre-emptive stable productivity,Beauty,Be,12.11,225.91,665,True
+P0262,Universal zero administration circuit,Books,Religious,407.82,247.41,31,True
+P0263,Enterprise-wide tertiary leverage,Home & Kitchen,Check,13.01,233.66,161,False
+P0264,Decentralized reciprocal superstructure,Electronics,Network,448.84,217.27,430,True
+P0265,Enhanced tangible benchmark,Beauty,Worry,253.53,66.4,886,True
+P0266,Profit-focused responsive array,Electronics,Black,434.54,196.67,235,True
+P0267,Self-enabling mission-critical middleware,Beauty,At,351.16,29.48,685,True
+P0268,Seamless motivating software,Sports,Hear,326.21,236.89,155,True
+P0269,Switchable bifurcated project,Electronics,Upon,230.72,20.61,375,True
+P0270,Organized multi-state moratorium,Books,Pull,208.14,83.67,519,True
+P0271,Down-sized needs-based secured line,Toys,Save,179.34,153.96,41,True
+P0272,Cross-group local intranet,Sports,Herself,273.52,203.5,260,False
+P0273,Optional fresh-thinking matrix,Toys,Year,263.97,68.94,601,False
+P0274,Stand-alone responsive framework,Clothing,Push,383.72,44.24,768,True
+P0275,Virtual object-oriented structure,Electronics,Win,61.12,36.17,722,False
+P0276,Seamless solution-oriented function,Clothing,Near,92.03,116.25,451,True
+P0277,Polarized user-facing database,Home & Kitchen,Late,217.05,33.32,378,False
+P0278,Public-key clear-thinking toolset,Clothing,Dinner,92.56,215.75,221,True
+P0279,Grass-roots composite superstructure,Electronics,Represent,299.47,188.75,772,True
+P0280,Optimized stable workforce,Clothing,Suddenly,273.67,222.17,101,False
+P0281,Visionary intermediate matrix,Electronics,Operation,193.87,241.53,208,False
+P0282,Managed well-modulated service-desk,Electronics,Every,423.32,104.5,952,False
+P0283,Distributed real-time instruction set,Sports,Win,345.83,112.8,987,True
+P0284,Persevering actuating hierarchy,Toys,Trial,221.56,32.35,396,True
+P0285,Profound multi-state methodology,Toys,Point,145.21,132.84,664,False
+P0286,Progressive holistic alliance,Books,Answer,312.09,145.32,120,False
+P0287,Up-sized responsive archive,Clothing,Threat,462.94,165.99,998,False
+P0288,User-centric responsive orchestration,Toys,Single,429.21,244.13,290,True
+P0289,Pre-emptive local moratorium,Clothing,Wall,497.7,81.83,908,True
+P0290,Virtual explicit emulation,Books,Subject,403.94,183.25,651,True
+P0291,Optional multi-state toolset,Beauty,Hair,56.39,58.01,705,False
+P0292,Monitored eco-centric matrix,Clothing,Two,326.56,67.43,567,True
+P0293,Public-key empowering capacity,Beauty,South,310.05,75.47,930,True
+P0294,Realigned holistic approach,Sports,Within,208.58,22.53,944,False
+P0295,Reduced hybrid interface,Beauty,Walk,250.72,140.51,470,True
+P0296,Devolved 6thgeneration frame,Home & Kitchen,Name,377.1,218.47,991,True
+P0297,Integrated coherent ability,Books,Represent,463.98,165.55,907,False
+P0298,Adaptive client-driven challenge,Books,Stop,54.35,184.35,549,True
+P0299,Cloned heuristic synergy,Beauty,Campaign,224.83,53.06,189,True
