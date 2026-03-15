@@ -45,7 +45,8 @@ shopstream-analytics-pipeline
 │   └── run_pipeline.py
 │
 ├── database
-│   └── schema.sql
+│   ├── schema.sql
+│   └── views.sql
 │
 ├── data
 │   └── raw
@@ -64,7 +65,9 @@ shopstream-analytics-pipeline
 ├── docs
 │   └── Case_Study_DS_Intern.pdf
 │
+├── .env
 ├── .env.example
+├── .gitignore
 ├── requirements.txt
 └── README.md
 ```
