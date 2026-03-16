@@ -24,7 +24,7 @@ The project generates synthetic operational and behavioral data, loads it into P
 ### Task 3: Dashboard UI (Completed)
 
 - React + Vite analytics dashboard connected to Cube API
-- KPI cards, revenue trend, category chart, and funnel chart
+- KPI cards, revenue trend, category chart, channel chart, and funnel chart
 - Responsive UI with custom visual styling
 
 ---
@@ -91,6 +91,7 @@ shopstream-analytics-pipeline/
 │       │   ├── KPIcards.jsx
 │       │   ├── RevenueChart.jsx
 │       │   ├── CategoryChart.jsx
+│       │   ├── ChannelChart.jsx
 │       │   └── FunnelChart.jsx
 │       ├── services/
 │       │   └── cubeApi.js
@@ -340,4 +341,15 @@ The dashboard expects Cube metadata and query endpoints to be available.
 - cube/model/cubes contains generated lowercase models and is currently kept for reference.
 - Active semantic models are in cube/schema and are loaded via CUBEJS_SCHEMA_PATH=schema.
 - Dashboard UI uses React + Vite and reads analytics data from Cube.
+
+---
+
+## Troubleshooting
+
+### Dashboard shows zero or blank charts
+
+1. Confirm Cube API is running at http://localhost:4000/cubejs-api/v1/meta.
+2. Make sure SQL views are applied: database/views.sql.
+3. In the dashboard, set Date Range to All time if the current window has no data.
+4. Verify tables contain rows after pipeline load (orders, order_items, events).
 
