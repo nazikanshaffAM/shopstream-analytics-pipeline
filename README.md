@@ -303,11 +303,17 @@ shopstream-analytics-pipeline/
 │
 ├── dashboard/
 │   ├── package.json
+│   ├── index.html
 │   └── src/
+│       ├── App.jsx
+│       ├── main.jsx
 │       ├── pages/
 │       │   └── Dashboard.jsx
 │       ├── components/
 │       │   ├── KPIcards.jsx
+│       │   ├── InsightTrendChart.jsx
+│       │   ├── InsightBarChart.jsx
+│       │   ├── InsightDonutChart.jsx
 │       │   ├── RevenueChart.jsx
 │       │   ├── CategoryChart.jsx
 │       │   ├── ChannelChart.jsx
