@@ -215,7 +215,7 @@ function Dashboard() {
 
       <header className="dashboard-header">
         <p className="eyebrow">shopstream analytics</p>
-        <h1>Commerce Pulse Dashboard</h1>
+        <h1>E-Commerce Pulse Dashboard</h1>
         <p className="subtitle">
           Live performance snapshot across sales, category contribution, and
           behavioral funnel stages.
