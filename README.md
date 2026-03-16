@@ -1,20 +1,29 @@
 # ShopStream Analytics Pipeline
 
-An end-to-end **data engineering pipeline** for a simulated e-commerce platform.
-This project generates synthetic operational and behavioral data, loads it into a PostgreSQL analytical database, and prepares it for analytics and dashboarding.
-
-## Highlights
-
-- automated data pipelines
-- relational schema design
-- reproducible data ingestion
-- scalable analytics architecture
+An end-to-end data engineering and analytics foundation for a simulated e-commerce platform.
+The project generates synthetic operational and behavioral data, loads it into PostgreSQL, builds analytical views, and exposes a semantic layer through Cube for downstream dashboarding.
 
 ---
 
-## Project Architecture
+## Current Status
 
-The system follows a typical modern analytics architecture:
+### Task 1: Data Pipeline (Completed)
+
+- Synthetic dataset generation
+- PostgreSQL schema design
+- Automated CSV-to-PostgreSQL loading
+- One-command pipeline runner
+
+### Task 2: Semantic Layer (Completed)
+
+- Analytical SQL views created in PostgreSQL
+- Cube semantic models configured and running
+- Primary-key and schema-path issues resolved
+- Metadata endpoint loading successfully
+
+---
+
+## Architecture
 
 ```
 Synthetic Data Generator (Python)
@@ -23,227 +32,180 @@ CSV Dataset Files
 ↓
 ETL Loader Pipeline
 ↓
-PostgreSQL Analytical Database
+PostgreSQL Tables
 ↓
-Semantic Layer (Cube.js)
+Analytical SQL Views
 ↓
-React Analytics Dashboard
+Semantic Layer (Cube)
+↓
+Dashboard/BI Consumption
 ```
-
-This layered design separates **data generation, storage, modeling, and visualization**, a common pattern in modern analytics platforms.
 
 ---
 
 ## Project Structure
 
 ```
-shopstream-analytics-pipeline
-│
-├── pipeline
+shopstream-analytics-pipeline/
+├── pipeline/
 │   ├── dataset_script.py
 │   ├── load_data.py
 │   └── run_pipeline.py
 │
-├── database
+├── database/
 │   ├── schema.sql
 │   └── views.sql
 │
-├── data
-│   └── raw
+├── data/
+│   └── raw/
 │       ├── customers.csv
 │       ├── products.csv
 │       ├── orders.csv
 │       ├── order_items.csv
 │       └── events.csv
 │
-├── cubejs
-├── dashboard
+├── cube/
+│   ├── cube.js
+│   ├── .env.example
+│   ├── package.json
+│   ├── schema/                # Active semantic models
+│   │   ├── Customers.js
+│   │   ├── Products.js
+│   │   ├── Orders.js
+│   │   ├── Events.js
+│   │   └── FactSales.js
+│   └── model/cubes/           # Auto-generated models (not active)
 │
-├── notebooks
+├── dashboard/                 # Dashboard app scaffold (currently empty)
+├── notebooks/
 │   └── exploration.ipynb
-│
-├── docs
+├── docs/
 │   └── Case_Study_DS_Intern.pdf
-│
-├── .env
 ├── .env.example
-├── .gitignore
 ├── requirements.txt
 └── README.md
 ```
 
 ---
 
-## Dataset Overview
-
-The pipeline generates **five datasets** representing an e-commerce system.
+## Datasets
 
 | Dataset | Description |
 |------|------|
-| customers | Customer demographic and account information |
-| products | Product catalog and pricing |
-| orders | Customer order transactions |
-| order_items | Line-item purchase details |
-| events | User behavior and engagement events |
-
-These datasets simulate both **transactional data** and **behavioral analytics data** used in real-world e-commerce systems.
+| customers | Customer demographic and account data |
+| products | Product catalog, pricing, and stock |
+| orders | Order-level transactional data |
+| order_items | Item-level purchase detail |
+| events | Behavioral clickstream/activity events |
 
 ---
 
-## Database Schema
+## Database Layer
 
-The PostgreSQL schema is designed to support analytical queries efficiently.
+### Base Tables
 
-### Tables
-
-- `customers`
-- `products`
-- `orders`
-- `order_items`
-- `events`
-
-### Relationships
-
-```
-customers
-↑
-│
-orders
-↑
-│
-order_items
-│
-└── products
-```
+- customers
+- products
+- orders
+- order_items
+- events
 
 ### Key Relationships
 
-| Relationship | Description |
-|------|------|
-| orders.customer_id -> customers.customer_id | Links orders to customers |
-| order_items.order_id -> orders.order_id | Links order items to orders |
-| order_items.product_id -> products.product_id | Links purchased items to products |
+- orders.customer_id -> customers.customer_id
+- order_items.order_id -> orders.order_id
+- order_items.product_id -> products.product_id
 
-This schema supports use cases across sales, customer, product, and behavior domains, including:
+### Analytical Views (database/views.sql)
 
-- revenue analysis by product, geography, channel, and time
-- customer segmentation and repeat purchase behavior
-- order status and average order value trends
-- product performance and low-performing item analysis
-- event-based funnel analysis (view -> cart -> checkout -> purchase)
+- fact_sales
+- customer_metrics
+- product_metrics
+- daily_sales_summary
+- channel_performance
+- event_funnel_summary
 
 ---
 
 ## Pipeline Components
 
-### 1) Synthetic Data Generator
+### 1) Dataset Generation
 
-**File:** `pipeline/dataset_script.py`
+File: pipeline/dataset_script.py
 
-Generates realistic synthetic data using:
+- Generates realistic synthetic data with Faker, NumPy, and Pandas
+- Writes CSV files to data/raw/
 
-- Faker
-- NumPy
-- Pandas
+### 2) ETL Loader
 
-Outputs CSV files to `data/raw/`:
+File: pipeline/load_data.py
 
-- `customers.csv`
-- `products.csv`
-- `orders.csv`
-- `order_items.csv`
-- `events.csv`
+- Reads CSV files
+- Applies datetime/date parsing where required
+- Truncates target tables and reloads data
+- Loads into PostgreSQL via SQLAlchemy
 
-### 2) Database Schema Definition
+### 3) Pipeline Orchestration
 
-**File:** `database/schema.sql`
+File: pipeline/run_pipeline.py
 
-Defines PostgreSQL tables and relationships.
-
-The schema ensures:
-
-- primary keys
-- foreign key constraints
-- consistent data types
-- analytical query compatibility
-
-### 3) ETL Data Loader
-
-**File:** `pipeline/load_data.py`
-
-Performs ETL:
-
-- **Extract:** reads CSV files from `data/raw/`
-- **Transform:** converts timestamps, normalizes data types, prepares records
-- **Load:** inserts records into PostgreSQL using SQLAlchemy
-
-### 4) Pipeline Runner
-
-**File:** `pipeline/run_pipeline.py`
-
-Orchestrates the end-to-end pipeline:
-
-1. generate synthetic dataset
-2. load CSV files into PostgreSQL
+- Runs dataset generation
+- Runs ETL loading
+- Exits on failure if any step fails
 
 ---
 
 ## Environment Setup
 
-Create a virtual environment:
+### Python Environment
 
 ```bash
 python -m venv .venv
 ```
 
-Activate the environment:
-
 ```powershell
 .venv\Scripts\activate
 ```
-
-Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
+### Root Environment Variables
+
+Create .env in project root (or copy from .env.example):
+
+```env
+DB_USER=postgres
+DB_PASSWORD=your_password
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=shopstream_analytics
+```
+
 ---
 
-## Database Setup
+## Run Task 1 (Pipeline)
 
-Create the PostgreSQL database:
+### 1) Create database
 
 ```sql
 CREATE DATABASE shopstream_analytics;
 ```
 
-Run the schema definition:
+### 2) Create tables
 
 ```sql
 \i database/schema.sql
 ```
 
----
-
-## Running the Pipeline
-
-After environment and database setup, run:
+### 3) Run pipeline
 
 ```bash
 python pipeline/run_pipeline.py
 ```
 
-This command will:
-
-1. generate synthetic datasets
-2. load all datasets into PostgreSQL tables
-
----
-
-## Verifying the Pipeline
-
-Run:
+### 4) Validate row counts
 
 ```sql
 SELECT COUNT(*) FROM customers;
@@ -253,28 +215,56 @@ SELECT COUNT(*) FROM order_items;
 SELECT COUNT(*) FROM events;
 ```
 
-Each table should return populated records.
+---
+
+## Run Task 2 (Semantic Layer)
+
+### 1) Create analytical views
+
+```sql
+\i database/views.sql
+```
+
+### 2) Configure Cube
+
+From cube/.env.example, set your DB values in cube/.env and keep:
+
+```env
+CUBEJS_SCHEMA_PATH=schema
+```
+
+This ensures Cube loads manual models from cube/schema.
+
+### 3) Install Cube dependencies
+
+```bash
+cd cube
+npm install
+```
+
+### 4) Start Cube server
+
+```bash
+npm run dev
+```
+
+### 5) Verify metadata endpoint
+
+```text
+http://localhost:4000/cubejs-api/v1/meta
+```
+
+Expected cubes from manual schema:
+
+- Customers
+- Products
+- Orders
+- Events
+- FactSales
 
 ---
 
-## Analytical Views
-
-To simplify downstream analytics and dashboarding, several SQL views are created on top of the relational schema:
-
-- `fact_sales` for item-level sales analytics
-- `customer_metrics` for customer-level purchase summaries
-- `product_metrics` for product performance analysis
-- `daily_sales_summary` for time-series sales trends
-- `channel_performance` for channel-based KPI analysis
-- `event_funnel_summary` for behavioral funnel tracking
-
-These views make it easier to build analytical queries, semantic models, and dashboard visualizations.
-
----
-
-## Technologies Used
-
-### Data Engineering
+## Tech Stack
 
 - Python
 - Pandas
@@ -282,33 +272,13 @@ These views make it easier to build analytical queries, semantic models, and das
 - Faker
 - SQLAlchemy
 - PostgreSQL
-
-### Analytics Layer
-
 - Cube.js
-
-### Visualization
-
-- React
-- Recharts
 
 ---
 
-## Key Design Considerations
+## Notes
 
-### Reproducibility
-
-The entire pipeline can be executed using a single command.
-
-### Modularity
-
-Data generation, ETL loading, and orchestration are separated into independent scripts.
-
-### Analytical Schema
-
-The relational schema supports common analytical queries used in e-commerce analytics.
-
-### Scalability
-
-The architecture can be extended to support larger datasets or additional data sources.
+- cube/model/cubes contains generated lowercase models and is currently kept for reference.
+- Active semantic models are in cube/schema and are loaded via CUBEJS_SCHEMA_PATH=schema.
+- dashboard folder is present as a scaffold and can be implemented in the next phase.
 

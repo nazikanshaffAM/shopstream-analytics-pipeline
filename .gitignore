@@ -137,6 +137,10 @@ celerybeat.pid
 # Node
 node_modules/
 
+# Cube runtime/generated artifacts
+cube/.cubestore/
+cube/model/
+
 # Environments
 .env
 .envrc
