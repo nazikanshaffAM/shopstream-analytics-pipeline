@@ -49,6 +49,225 @@ Dashboard/BI Consumption
 
 ---
 
+## Step-by-Step Setup
+
+Follow this sequence exactly for a clean local run.
+
+### 1. Prerequisites
+
+Install these tools before cloning or running the project:
+
+- Git
+- Python 3.11+
+- Node.js 18+ and npm
+- PostgreSQL 14+ with `psql` available in your terminal
+
+You will run three local services/tools during setup:
+
+- PostgreSQL database
+- Cube API on port 4000
+- Vite dashboard on port 5173
+
+### 2. Clone the repository
+
+```bash
+git clone <your-repository-url>
+cd shopstream-analytics-pipeline
+```
+
+### 3. Create the Python virtual environment
+
+Windows PowerShell:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+macOS or Linux:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+### 4. Install Node.js dependencies
+
+Install Cube dependencies:
+
+```bash
+cd cube
+npm install
+cd ..
+```
+
+Install dashboard dependencies:
+
+```bash
+cd dashboard
+npm install
+cd ..
+```
+
+### 5. Create environment files
+
+Create the root `.env` file from `.env.example`.
+
+Windows PowerShell:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+macOS or Linux:
+
+```bash
+cp .env.example .env
+```
+
+Update `.env` with your PostgreSQL credentials:
+
+```env
+DB_USER=postgres
+DB_PASSWORD=your_password_here
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=shopstream_analytics
+```
+
+Create the Cube environment file:
+
+Windows PowerShell:
+
+```powershell
+Copy-Item cube/.env.example cube/.env
+```
+
+macOS or Linux:
+
+```bash
+cp cube/.env.example cube/.env
+```
+
+Update `cube/.env` and make sure these values are set correctly:
+
+```env
+CUBEJS_DEV_MODE=true
+CUBEJS_API_SECRET=shopstream_secret_key
+CUBEJS_DB_TYPE=postgres
+CUBEJS_DB_HOST=localhost
+CUBEJS_DB_PORT=5432
+CUBEJS_DB_NAME=shopstream_analytics
+CUBEJS_DB_USER=postgres
+CUBEJS_DB_PASS=your_postgres_password
+CUBEJS_SCHEMA_PATH=schema
+```
+
+`DB_PASSWORD` in the root `.env` and `CUBEJS_DB_PASS` in `cube/.env` should match the same PostgreSQL password.
+
+### 6. Start PostgreSQL and create the database
+
+Make sure PostgreSQL is running, then create the database:
+
+```bash
+psql -U postgres -c "CREATE DATABASE shopstream_analytics;"
+```
+
+If the database already exists, PostgreSQL will return an error and you can continue.
+
+### 7. Create tables and analytical views
+
+Run the schema file:
+
+```bash
+psql -U postgres -d shopstream_analytics -f database/schema.sql
+```
+
+Run the views file:
+
+```bash
+psql -U postgres -d shopstream_analytics -f database/views.sql
+```
+
+### 8. Generate and load the dataset
+
+With the virtual environment active, run:
+
+```bash
+python pipeline/run_pipeline.py
+```
+
+What this does:
+
+- Generates synthetic CSV files in `data/raw`
+- Truncates existing tables
+- Loads the CSV data into PostgreSQL
+
+### 9. Validate that data loaded successfully
+
+Run these checks:
+
+```bash
+psql -U postgres -d shopstream_analytics -c "SELECT COUNT(*) FROM customers;"
+psql -U postgres -d shopstream_analytics -c "SELECT COUNT(*) FROM products;"
+psql -U postgres -d shopstream_analytics -c "SELECT COUNT(*) FROM orders;"
+psql -U postgres -d shopstream_analytics -c "SELECT COUNT(*) FROM order_items;"
+psql -U postgres -d shopstream_analytics -c "SELECT COUNT(*) FROM events;"
+```
+
+You should see non-zero row counts for all five tables.
+
+### 10. Start the Cube semantic layer
+
+Open a new terminal, go to the project root, and run:
+
+```bash
+cd cube
+npm run dev
+```
+
+Then verify Cube is responding:
+
+```text
+http://localhost:4000/cubejs-api/v1/meta
+```
+
+Expected cubes:
+
+- Customers
+- Products
+- Orders
+- Events
+- FactSales
+
+### 11. Start the dashboard
+
+Open another new terminal and run:
+
+```bash
+cd dashboard
+npm start
+```
+
+Open the dashboard in your browser:
+
+```text
+http://localhost:5173
+```
+
+### 12. Confirm the project is running successfully
+
+The project is working correctly when all of these are true:
+
+- PostgreSQL is running and contains loaded data
+- Cube responds at `http://localhost:4000/cubejs-api/v1/meta`
+- The dashboard opens at `http://localhost:5173`
+- KPI cards and charts display data instead of zeros or blanks
+
+---
+
 ## Project Structure
 
 ```
@@ -177,150 +396,50 @@ File: pipeline/run_pipeline.py
 
 ## Environment Setup
 
-### Python Environment
-
-```bash
-python -m venv .venv
-```
-
-```powershell
-.venv\Scripts\activate
-```
-
-```bash
-pip install -r requirements.txt
-```
-
-### Root Environment Variables
-
-Create .env in project root (or copy from .env.example):
-
-```env
-DB_USER=postgres
-DB_PASSWORD=your_password
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=shopstream_analytics
-```
+The full local setup sequence is documented in Step-by-Step Setup above.
 
 ---
 
 ## Run Task 1 (Pipeline)
 
-### 1) Create database
-
-```sql
-CREATE DATABASE shopstream_analytics;
-```
-
-### 2) Create tables
-
-```sql
-\i database/schema.sql
-```
-
-### 3) Run pipeline
-
-```bash
-python pipeline/run_pipeline.py
-```
-
-### 4) Validate row counts
-
-```sql
-SELECT COUNT(*) FROM customers;
-SELECT COUNT(*) FROM products;
-SELECT COUNT(*) FROM orders;
-SELECT COUNT(*) FROM order_items;
-SELECT COUNT(*) FROM events;
-```
+1. Create the database.
+2. Apply `database/schema.sql`.
+3. Run `python pipeline/run_pipeline.py`.
+4. Validate that all five tables have non-zero row counts.
 
 ---
 
 ## Run Task 2 (Semantic Layer)
 
-### 1) Create analytical views
-
-```sql
-\i database/views.sql
-```
-
-### 2) Configure Cube
-
-From cube/.env.example, set your DB values in cube/.env and keep:
-
-```env
-CUBEJS_SCHEMA_PATH=schema
-```
-
-This ensures Cube loads manual models from cube/schema.
-
-### 3) Install Cube dependencies
-
-```bash
-cd cube
-npm install
-```
-
-### 4) Start Cube server
-
-```bash
-npm run dev
-```
-
-### 5) Verify metadata endpoint
-
-```text
-http://localhost:4000/cubejs-api/v1/meta
-```
-
-Expected cubes from manual schema:
-
-- Customers
-- Products
-- Orders
-- Events
-- FactSales
+1. Apply `database/views.sql`.
+2. Create `cube/.env` from `cube/.env.example`.
+3. Keep `CUBEJS_SCHEMA_PATH=schema`.
+4. Run `cd cube` and `npm run dev`.
+5. Verify `http://localhost:4000/cubejs-api/v1/meta`.
 
 ---
 
 ## Run Task 3 (Dashboard UI)
 
-### 1) Install dashboard dependencies
-
-```bash
-cd dashboard
-npm install
-```
-
-### 2) Start dashboard
-
-```bash
-npm start
-```
-
-Vite will run locally (usually at http://localhost:5173).
-
-### 3) Make sure Cube API is running
-
-In a separate terminal:
-
-```bash
-cd cube
-npm run dev
-```
-
-The dashboard expects Cube metadata and query endpoints to be available.
+1. Install dashboard dependencies with `cd dashboard` and `npm install`.
+2. Start the dashboard with `npm start`.
+3. Keep Cube running in a separate terminal.
+4. Open `http://localhost:5173`.
 
 ---
 
 ## Full Local Run Order
 
-1. Start PostgreSQL and ensure `shopstream_analytics` exists
-2. Apply `database/schema.sql` and `database/views.sql`
-3. Run `python pipeline/run_pipeline.py` (optional refresh of synthetic data)
-4. Start Cube API with `cd cube && npm run dev`
-5. Start Dashboard UI with `cd dashboard && npm start`
+1. Clone the repository.
+2. Create and activate the Python virtual environment.
+3. Install Python and Node.js dependencies.
+4. Create `.env` and `cube/.env` from their example files.
+5. Start PostgreSQL and create `shopstream_analytics`.
+6. Apply `database/schema.sql` and `database/views.sql`.
+7. Run `python pipeline/run_pipeline.py`.
+8. Start Cube with `cd cube && npm run dev`.
+9. Start the dashboard with `cd dashboard && npm start`.
+10. Open `http://localhost:5173` and verify charts render.
 
 ---
 
@@ -352,4 +471,5 @@ The dashboard expects Cube metadata and query endpoints to be available.
 2. Make sure SQL views are applied: database/views.sql.
 3. In the dashboard, set Date Range to All time if the current window has no data.
 4. Verify tables contain rows after pipeline load (orders, order_items, events).
+5. Confirm `CUBEJS_API_SECRET` in `cube/.env` matches the token used in `dashboard/src/services/cubeApi.js`.
 
