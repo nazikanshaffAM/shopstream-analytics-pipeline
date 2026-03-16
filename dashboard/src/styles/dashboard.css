@@ -14,6 +14,9 @@
   --accent-green: #138a72;
   --accent-orange: #f07f13;
   --accent-indigo: #6e4bde;
+  --accent-ocean: #1c6dd0;
+  --accent-ember: #d5533f;
+  --accent-rose: #c7526d;
 }
 
 * {
@@ -99,7 +102,7 @@ body {
 
 .filters-row {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 220px));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 1rem;
 }
 
@@ -153,6 +156,8 @@ body {
 }
 
 .kpi-card {
+  position: relative;
+  overflow: hidden;
   border: 1px solid var(--border-soft);
   border-radius: 1rem;
   padding: 1rem 1.1rem;
@@ -162,12 +167,54 @@ body {
   animation: rise-in 0.45s ease both;
 }
 
+.kpi-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -24px -24px auto;
+  width: 96px;
+  height: 96px;
+  border-radius: 999px;
+  opacity: 0.18;
+}
+
 .kpi-card:nth-child(2) {
   animation-delay: 0.08s;
 }
 
 .kpi-card:nth-child(3) {
   animation-delay: 0.14s;
+}
+
+.kpi-card:nth-child(4) {
+  animation-delay: 0.2s;
+}
+
+.kpi-card:nth-child(5) {
+  animation-delay: 0.26s;
+}
+
+.kpi-card:nth-child(6) {
+  animation-delay: 0.32s;
+}
+
+.accent-sage::after {
+  background: var(--accent-green);
+}
+
+.accent-sunrise::after {
+  background: var(--accent-orange);
+}
+
+.accent-ocean::after {
+  background: var(--accent-ocean);
+}
+
+.accent-plum::after {
+  background: var(--accent-indigo);
+}
+
+.accent-ember::after {
+  background: var(--accent-ember);
 }
 
 .kpi-title {
@@ -184,6 +231,71 @@ body {
   font-family: "Space Grotesk", "Outfit", sans-serif;
   font-size: clamp(1.45rem, 2.2vw, 2rem);
   font-weight: 700;
+}
+
+.kpi-detail {
+  position: relative;
+  z-index: 1;
+  margin: 0.5rem 0 0;
+  max-width: 30ch;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.highlight-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.highlight-card {
+  border: 1px solid var(--border-soft);
+  border-radius: 1rem;
+  padding: 1rem 1.1rem;
+  background: rgba(255, 251, 244, 0.9);
+  box-shadow: var(--shadow-soft);
+}
+
+.highlight-card h3 {
+  margin: 0 0 0.45rem;
+  font-family: "Space Grotesk", "Outfit", sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.3;
+}
+
+.highlight-card p:last-child {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.highlight-label {
+  margin: 0 0 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.tone-sage {
+  background: linear-gradient(160deg, rgba(223, 248, 241, 0.95) 0%, rgba(255, 252, 246, 0.95) 100%);
+}
+
+.tone-sunrise {
+  background: linear-gradient(160deg, rgba(255, 230, 201, 0.95) 0%, rgba(255, 252, 246, 0.95) 100%);
+}
+
+.tone-ocean {
+  background: linear-gradient(160deg, rgba(216, 233, 255, 0.95) 0%, rgba(255, 252, 246, 0.95) 100%);
+}
+
+.tone-plum {
+  background: linear-gradient(160deg, rgba(236, 226, 255, 0.95) 0%, rgba(255, 252, 246, 0.95) 100%);
 }
 
 .chart-grid {
@@ -210,11 +322,50 @@ body {
   animation: rise-in 0.55s ease both;
 }
 
+.chart-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 0.75rem;
+}
+
 .chart-title {
-  margin: 0 0 0.9rem;
+  margin: 0;
   font-family: "Space Grotesk", "Outfit", sans-serif;
   font-size: 1.05rem;
   font-weight: 700;
+}
+
+.chart-subtitle {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.chart-note-card {
+  min-width: 0;
+}
+
+.chart-note {
+  height: 100%;
+}
+
+.chart-note p {
+  margin: 0 0 1rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.dashboard-notes {
+  margin: 0;
+  padding-left: 1rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+
+.dashboard-notes li + li {
+  margin-top: 0.55rem;
 }
 
 .dashboard-footnote {
@@ -241,10 +392,14 @@ body {
 
 @media (max-width: 960px) {
   .filters-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .highlight-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -262,7 +417,15 @@ body {
     padding-top: 1.6rem;
   }
 
+  .filters-row {
+    grid-template-columns: 1fr;
+  }
+
   .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .highlight-grid {
     grid-template-columns: 1fr;
   }
 }
