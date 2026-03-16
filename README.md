@@ -21,6 +21,12 @@ The project generates synthetic operational and behavioral data, loads it into P
 - Primary-key and schema-path issues resolved
 - Metadata endpoint loading successfully
 
+### Task 3: Dashboard UI (Completed)
+
+- React + Vite analytics dashboard connected to Cube API
+- KPI cards, revenue trend, category chart, and funnel chart
+- Responsive UI with custom visual styling
+
 ---
 
 ## Architecture
@@ -76,7 +82,20 @@ shopstream-analytics-pipeline/
 │   │   └── FactSales.js
 │   └── model/cubes/           # Auto-generated models (not active)
 │
-├── dashboard/                 # Dashboard app scaffold (currently empty)
+├── dashboard/
+│   ├── package.json
+│   └── src/
+│       ├── pages/
+│       │   └── Dashboard.jsx
+│       ├── components/
+│       │   ├── KPIcards.jsx
+│       │   ├── RevenueChart.jsx
+│       │   ├── CategoryChart.jsx
+│       │   └── FunnelChart.jsx
+│       ├── services/
+│       │   └── cubeApi.js
+│       └── styles/
+│           └── dashboard.css
 ├── notebooks/
 │   └── exploration.ipynb
 ├── docs/
@@ -264,6 +283,46 @@ Expected cubes from manual schema:
 
 ---
 
+## Run Task 3 (Dashboard UI)
+
+### 1) Install dashboard dependencies
+
+```bash
+cd dashboard
+npm install
+```
+
+### 2) Start dashboard
+
+```bash
+npm start
+```
+
+Vite will run locally (usually at http://localhost:5173).
+
+### 3) Make sure Cube API is running
+
+In a separate terminal:
+
+```bash
+cd cube
+npm run dev
+```
+
+The dashboard expects Cube metadata and query endpoints to be available.
+
+---
+
+## Full Local Run Order
+
+1. Start PostgreSQL and ensure `shopstream_analytics` exists
+2. Apply `database/schema.sql` and `database/views.sql`
+3. Run `python pipeline/run_pipeline.py` (optional refresh of synthetic data)
+4. Start Cube API with `cd cube && npm run dev`
+5. Start Dashboard UI with `cd dashboard && npm start`
+
+---
+
 ## Tech Stack
 
 - Python
@@ -280,5 +339,5 @@ Expected cubes from manual schema:
 
 - cube/model/cubes contains generated lowercase models and is currently kept for reference.
 - Active semantic models are in cube/schema and are loaded via CUBEJS_SCHEMA_PATH=schema.
-- dashboard folder is present as a scaffold and can be implemented in the next phase.
+- Dashboard UI uses React + Vite and reads analytics data from Cube.
 
